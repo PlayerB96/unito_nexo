@@ -16,7 +16,7 @@ Esta etapa digitaliza el picking del centro de distribución de La Número Uno: 
 
 ## Stack fijado en package.json
 
-Vue 3.5.41, Vite 8.3.1, Pinia 4.0.3, Vue Router 5.3.1, Naive UI 2.45.3, Axios 1.20.0, Zod 4.6.5, TypeScript 5.9.3. Node 24.21.0 (`.nvmrc`).
+Vue 3.5.41, Vite 8.3.1, Pinia 4.0.3, Vue Router 5.3.1, Naive UI 2.45.3, Axios 1.20.0, Zod 4.6.5, lucide-vue-next 1.0.0, idb 8.0.3, vite-plugin-pwa 2.0.0, TypeScript 5.9.3. Node 24.21.0 (`.nvmrc`).
 
 ## Hoja de extracción
 
@@ -28,10 +28,31 @@ El backend, con tablas de SQL Server asociadas a producción, decide qué línea
 - La ubicación faltante queda marcada para no volver a prometerla.
 - Un faltante de piso no cierra la hoja ni la devuelve al analista.
 
+## Roles
+
+El puesto y el área no son roles. El centro de distribución usa cuatro:
+
+- Operario: ejecuta la tarea asignada. Ve extracción o mesa según la hoja.
+- Auxiliar: asigna hojas que el backend ya soltó completas.
+- Supervisor: ve avance, faltantes y pendientes, y puede reasignar.
+- Administrador: acceso completo a la operación y a las cuentas.
+
+Avíos, telas e ingresos son áreas de la hoja, no roles nuevos.
+
+## Sin red
+
+La pantalla distingue dos modos, siempre visibles: **En línea** y **Sin red**.
+
+- Con red, el operario descarga la hoja completa. Esa copia y la cola de retiros, faltantes y horas quedan en IndexedDB, con `idb`.
+- Sin red, el operario sigue sobre esa copia. Asignar, reasignar y buscar otra cobertura de producción esperan a que vuelva la red.
+- Con la página abierta y la red de vuelta, Axios envía la cola al API. Con la pantalla cerrada, el envío espera a que alguien vuelva a abrirla.
+- Pinia guarda el estado de pantalla. La cola no vive en Pinia.
+- SQL Server sigue siendo la verdad. Este repositorio no habla con el servidor directo.
+
 ## Límites
 
 - No agregar dependencias ni cambiar versiones fijadas.
-- No implementar API, APK Kotlin, base de datos ni procedimientos almacenados.
+- No implementar API, APK Kotlin, SQL Server ni procedimientos almacenados.
+- No usar el SQLite del teléfono ni otra app instalada para esta etapa.
 - No usar CSS propio salvo que Naive UI no cubra el caso.
 - No introducir Tailwind, Inertia ni IA.
-- La interfaz pinta la operación. Hardware, cola offline y verdad de negocio viven fuera de este repo.
