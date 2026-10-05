@@ -1,0 +1,50 @@
+---
+description: Estilo Vue 3, Naive UI, breakpoints y estructura del frontend
+globs: src/**/*.{vue,ts}
+alwaysApply: false
+---
+
+# Estilo
+
+- `<script setup lang="ts">` en todo componente. Sin Options API.
+- Componentes en PascalCase. Composables `useXxx`. Un store Pinia por feature.
+- Schemas Zod junto al feature que valida.
+- UI con Naive UI, resuelta por `unplugin-vue-components`.
+- Textos de interfaz en español.
+- Sin emojis en interfaz, textos, comentarios ni código.
+- Iconos solo de Lucide, con `lucide-vue-next`. Naive UI no aporta el set de iconos.
+
+## Breakpoints
+
+Definirlos una sola vez en `n-config-provider`. Toda pantalla funciona en los tres.
+
+| Nombre | min-width | Uso |
+| --- | --- | --- |
+| mobile | 0 | base, sin prefijo |
+| tablet | 768px | prefijo `tablet:` |
+| desktop | 1024px | prefijo `desktop:` |
+
+- `n-grid` con `responsive="screen"`. Ejemplo: `cols="1 tablet:2 desktop:4"`.
+- No usar `xs`, `s`, `m`, `l`, `xl` ni `xxl`.
+
+## Estructura
+
+```
+src/app/        # arranque, router, layouts
+src/features/   # picking (auth y sync de UI solo si se piden)
+src/shared/     # piezas comunes y cliente HTTP
+```
+
+## Patrones
+
+- Pantalla → store o composable → Axios. La vista no decide stock ni ubicación.
+- Validar con Zod antes de enviar.
+- Pinia guarda estado de pantalla, no la cola offline.
+
+## Prohibido
+
+- Archivos `.css` nuevos, bloques `<style>` y estilo inline, salvo que Naive UI no pueda resolverlo.
+- Tailwind, Vuetify u otro kit distinto de Naive UI.
+- Paquetes que no estén en `package.json`.
+- `any` para ocultar tipos del dominio.
+- Emojis. El icono sale de Lucide.

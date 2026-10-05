@@ -1,0 +1,37 @@
+---
+description: Alcance y límites de unito_nexo, frontend de picking
+alwaysApply: true
+---
+
+# unito_nexo
+
+SPA de logística y manufactura. `STACK_ID`: `frontend-vue`.
+Esta etapa digitaliza el picking del centro de distribución de La Número Uno: extracción de almacén y mesa de distribución.
+
+## Alcance
+
+- Este repositorio es solo el frontend.
+- Módulo actual: picking (extracción de almacén y mesa de distribución).
+- Inventario y el resto de procesos logísticos quedan fuera hasta que se pidan.
+
+## Stack fijado en package.json
+
+Vue 3.5.41, Vite 8.3.1, Pinia 4.0.3, Vue Router 5.3.1, Naive UI 2.45.3, Axios 1.20.0, Zod 4.6.5, TypeScript 5.9.3. Node 24.21.0 (`.nvmrc`).
+
+## Hoja de extracción
+
+El backend, con tablas de SQL Server asociadas a producción, decide qué línea puede salir. La interfaz solo refleja ese resultado.
+
+- Una hoja nace completa: cada línea ya está cubierta. Lo pendiente no se imprime ni se asigna.
+- Si el almacenero no encuentra una línea, marca esa línea y la ubicación donde buscó. El resto de la hoja sigue.
+- El backend suelta la reserva y busca otra ubicación o lote cubierto. Si hay, actualiza la misma hoja. Si no hay, saca la línea y la deja pendiente de producción.
+- La ubicación faltante queda marcada para no volver a prometerla.
+- Un faltante de piso no cierra la hoja ni la devuelve al analista.
+
+## Límites
+
+- No agregar dependencias ni cambiar versiones fijadas.
+- No implementar API, APK Kotlin, base de datos ni procedimientos almacenados.
+- No usar CSS propio salvo que Naive UI no cubra el caso.
+- No introducir Tailwind, Inertia ni IA.
+- La interfaz pinta la operación. Hardware, cola offline y verdad de negocio viven fuera de este repo.

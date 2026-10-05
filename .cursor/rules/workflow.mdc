@@ -1,0 +1,15 @@
+---
+description: Comandos, instalación y flujo de trabajo del frontend
+alwaysApply: true
+---
+
+# Workflow
+
+- Node 24.21.0, según `.nvmrc`. Gestor: npm.
+- Desarrollo: `npm run dev`.
+- Verificación: `npm run build` (tipos con `vue-tsc` y build de Vite).
+- No hay lint ni tests. No crear esos scripts sin pedirlo.
+- Instalar paquetes solo si el usuario lo pide. Confirmar antes de agregar uno que no esté en `package.json`.
+- Commits solo cuando el usuario lo pida. Mensaje en español, centrado en el porqué.
+- Responder en español.
+- Si cambia la interfaz, comprobar el flujo en el navegador antes de darlo por cerrado.
