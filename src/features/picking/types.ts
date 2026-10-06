@@ -1,5 +1,7 @@
 export type Rol = 'operario' | 'auxiliar' | 'supervisor' | 'administrador'
 
+export type Acceso = 'ejecutar' | 'asignar' | 'reasignar' | 'reportar' | 'administrar'
+
 export type Sesion = {
   dni: string
   rol: Rol
@@ -13,11 +15,21 @@ export type UsuarioPrueba = {
   etiqueta: string
 }
 
+export type Requisicion = 'N' | 'R'
+
+export type EstadoHoja = 'libre' | 'asignada' | 'atendida'
+
 export type HojaCola = {
   codigo: string
   area: string
   lineas: number
+  semana: number
+  requisicion: Requisicion
   asignadaA: string | null
+  porRetirar: number
+  retiradas: number
+  pendientes: number
+  faltantes: number
 }
 
 export type EstadoLinea = 'asignada' | 'retirada' | 'pendiente_produccion'

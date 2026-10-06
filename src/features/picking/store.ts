@@ -5,10 +5,11 @@ import {
   coberturas,
   crearCola,
   crearHoja,
+  estadoDeHoja,
   eventoInicial,
   pendientesIniciales,
 } from './mock'
-import type { Evento, Faltante, HojaCola, Sesion } from './types'
+import type { Acceso, Evento, Faltante, HojaCola, Rol, Sesion, UsuarioPrueba } from './types'
 
 function esperar(ms: number) {
   return new Promise((resolve) => {
@@ -18,6 +19,7 @@ function esperar(ms: number) {
 
 export const usePickingStore = defineStore('picking', () => {
   const sesion = ref<Sesion | null>(null)
+  const cuentas = ref<UsuarioPrueba[]>(USUARIOS.map((usuario) => ({ ...usuario })))
   const hoja = ref(crearHoja())
   const cola = ref<HojaCola[]>(crearCola())
   const faltantes = ref<Faltante[]>([])
@@ -54,13 +56,19 @@ export const usePickingStore = defineStore('picking', () => {
   )
   const ultimoEvento = computed(() => eventos.value[eventos.value.length - 1] ?? null)
   const rol = computed(() => sesion.value?.rol ?? null)
-  const puedeEjecutar = computed(() => rol.value === 'operario' || rol.value === 'administrador')
-  const puedeAsignar = computed(() => rol.value === 'auxiliar' || rol.value === 'administrador')
-  const puedeSupervisar = computed(
-    () => rol.value === 'supervisor' || rol.value === 'administrador',
-  )
-  const puedeAdministrar = computed(() => rol.value === 'administrador')
-  const puedeRepartir = computed(() => puedeAsignar.value || puedeSupervisar.value)
+  const permisos = computed<Record<Acceso, boolean>>(() => ({
+    ejecutar: rol.value === 'operario' || rol.value === 'administrador',
+    asignar: rol.value === 'auxiliar' || rol.value === 'administrador',
+    reasignar:
+      rol.value === 'auxiliar' || rol.value === 'supervisor' || rol.value === 'administrador',
+    reportar: rol.value === 'supervisor' || rol.value === 'administrador',
+    administrar: rol.value === 'administrador',
+  }))
+  const puedeEjecutar = computed(() => permisos.value.ejecutar)
+  const puedeAsignar = computed(() => permisos.value.asignar)
+  const puedeReasignar = computed(() => permisos.value.reasignar)
+  const puedeReportar = computed(() => permisos.value.reportar)
+  const puedeAdministrar = computed(() => permisos.value.administrar)
   const avance = computed(() => {
     const total = hoja.value.lineas.length
     const resueltas = hoja.value.lineas.filter((linea) => linea.estado !== 'asignada').length
@@ -76,11 +84,27 @@ export const usePickingStore = defineStore('picking', () => {
     eventos.value.push({ id: siguienteId(), ...evento })
   }
 
+  function permite(acceso: Acceso) {
+    return permisos.value[acceso]
+  }
+
   function login(dni: string, clave: string) {
-    const usuario = USUARIOS.find((item) => item.dni === dni && item.clave === clave)
+    const usuario = cuentas.value.find((item) => item.dni === dni && item.clave === clave)
     if (!usuario) return false
     sesion.value = { dni: usuario.dni, rol: usuario.rol, etiqueta: usuario.etiqueta }
     return true
+  }
+
+  function crearCuenta(cuenta: { nombre: string; dni: string; clave: string; rol: Rol }) {
+    if (!puedeAdministrar.value) return 'No administras cuentas.'
+    if (cuentas.value.some((item) => item.dni === cuenta.dni)) return 'Ese DNI ya tiene cuenta.'
+    cuentas.value.push({
+      dni: cuenta.dni,
+      clave: cuenta.clave,
+      rol: cuenta.rol,
+      etiqueta: cuenta.nombre,
+    })
+    return null
   }
 
   function reiniciar() {
@@ -97,20 +121,61 @@ export const usePickingStore = defineStore('picking', () => {
     reiniciar()
   }
 
-  function asignarHoja(codigo: string, destino: string) {
-    if (!puedeRepartir.value) return false
-    const hojaCola = cola.value.find((item) => item.codigo === codigo)
-    if (!hojaCola) return false
-    const anterior = hojaCola.asignadaA
-    hojaCola.asignadaA = destino
-    anotar({
-      tono: 'info',
-      titulo: anterior ? 'Hoja reasignada' : 'Hoja asignada',
-      detalle: anterior
-        ? `${hojaCola.codigo} pasó de ${anterior} a ${destino}.`
-        : `${hojaCola.codigo} (${hojaCola.area}) quedó asignada a ${destino}.`,
-    })
-    return true
+  function asignarHojas(codigos: string[], destino: string) {
+    const asignadas: string[] = []
+    const reasignadas: string[] = []
+    const omitidas: string[] = []
+    for (const codigo of codigos) {
+      const hojaCola = cola.value.find((item) => item.codigo === codigo)
+      if (!hojaCola || estadoDeHoja(hojaCola) === 'atendida') {
+        omitidas.push(codigo)
+        continue
+      }
+      const reasigna = Boolean(hojaCola.asignadaA)
+      if (reasigna ? !puedeReasignar.value : !puedeAsignar.value) {
+        omitidas.push(codigo)
+        continue
+      }
+      if (hojaCola.asignadaA === destino) {
+        omitidas.push(codigo)
+        continue
+      }
+      const anterior = hojaCola.asignadaA
+      hojaCola.asignadaA = destino
+      if (anterior) reasignadas.push(codigo)
+      else asignadas.push(codigo)
+    }
+    if (asignadas.length > 0 || reasignadas.length > 0) {
+      const partes = [
+        asignadas.length > 0 ? `${asignadas.join(', ')} quedó con ${destino}` : '',
+        reasignadas.length > 0 ? `${reasignadas.join(', ')} pasó a ${destino}` : '',
+      ].filter(Boolean)
+      anotar({
+        tono: 'info',
+        titulo: reasignadas.length > 0 ? 'Hojas reasignadas' : 'Hojas asignadas',
+        detalle: `${partes.join('. ')}.`,
+      })
+    }
+    return { asignadas, reasignadas, omitidas }
+  }
+
+  function anularHojas(codigos: string[]) {
+    if (!puedeReasignar.value) return []
+    const anuladas: string[] = []
+    for (const codigo of codigos) {
+      const hojaCola = cola.value.find((item) => item.codigo === codigo)
+      if (!hojaCola?.asignadaA || estadoDeHoja(hojaCola) === 'atendida') continue
+      hojaCola.asignadaA = null
+      anuladas.push(codigo)
+    }
+    if (anuladas.length > 0) {
+      anotar({
+        tono: 'warning',
+        titulo: 'Asignación anulada',
+        detalle: `${anuladas.join(', ')} volvió a quedar libre.`,
+      })
+    }
+    return anuladas
   }
 
   async function confirmarRetiro(lineaId: string) {
@@ -196,14 +261,19 @@ export const usePickingStore = defineStore('picking', () => {
     puedeRetirar,
     ultimoEvento,
     avance,
+    cuentas,
     puedeEjecutar,
     puedeAsignar,
-    puedeSupervisar,
+    puedeReasignar,
+    puedeReportar,
     puedeAdministrar,
+    permite,
+    crearCuenta,
     login,
     logout,
     reiniciar,
-    asignarHoja,
+    asignarHojas,
+    anularHojas,
     confirmarRetiro,
     reportarNoEncontrada,
     retirarMercaderia,
