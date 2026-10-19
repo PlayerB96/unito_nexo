@@ -21,8 +21,12 @@ export type EstadoHoja = 'libre' | 'asignada' | 'atendida'
 
 export type HojaCola = {
   codigo: string
-  area: string
+  estilo: string
+  ubicacion: string
+  tipoPrenda: string
+  segmento: string
   lineas: number
+  pedido: number
   semana: number
   requisicion: Requisicion
   asignadaA: string | null

@@ -105,7 +105,7 @@ function salir() {
             </n-tooltip>
           </n-space>
         </n-space>
-        <div class="barra-nav">
+        <nav class="barra-nav" aria-label="Navegación principal">
           <n-menu
             mode="horizontal"
             responsive
@@ -113,7 +113,7 @@ function salir() {
             :options="opciones"
             @update:value="ir"
           />
-        </div>
+        </nav>
       </n-space>
     </n-layout-header>
     <n-layout-content :content-style="relleno">
@@ -124,31 +124,54 @@ function salir() {
 
 <style scoped>
 .barra-nav {
-  background-color: color-mix(in srgb, #18a058 16%, var(--n-color));
-  padding: 6px 8px;
+  display: flex;
+  align-items: stretch;
+  min-height: 44px;
+  padding: 0 8px;
+  border-top: 1px solid var(--n-border-color);
+  background-color: color-mix(in srgb, var(--n-text-color) 4%, var(--n-color));
+}
+
+.barra-nav:deep(.n-menu) {
+  flex: 1;
+  height: 44px;
+  background-color: transparent !important;
+}
+
+.barra-nav:deep(.n-menu-item) {
+  margin: 0 2px;
 }
 
 .barra-nav:deep(.n-menu-item-content) {
-  border-bottom-color: transparent !important;
-  border-radius: 8px;
+  height: 44px !important;
+  padding: 0 14px !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
 }
 
 .barra-nav:deep(.n-menu-item-content::before) {
-  display: block !important;
-  border-radius: 8px;
+  display: none !important;
 }
 
-.barra-nav:deep(.n-menu-item-content:not(.n-menu-item-content--selected):hover::before) {
-  background-color: color-mix(in srgb, #18a058 18%, transparent);
+.barra-nav:deep(.n-menu-item-content:not(.n-menu-item-content--selected):hover) {
+  color: #18a058 !important;
+  background-color: color-mix(in srgb, #18a058 8%, transparent);
 }
 
-.barra-nav:deep(.n-menu-item-content--selected::before) {
-  background-color: #18a058 !important;
+.barra-nav:deep(.n-menu-item-content--selected) {
+  border-bottom-color: #18a058 !important;
+  color: #18a058 !important;
+  font-weight: 600;
+  background-color: color-mix(in srgb, #18a058 10%, transparent);
 }
 
 .barra-nav:deep(.n-menu-item-content--selected .n-menu-item-content-header),
 .barra-nav:deep(.n-menu-item-content--selected .n-menu-item-content__icon) {
-  color: #fff !important;
+  color: #18a058 !important;
   font-weight: 600;
+}
+
+.barra-nav:deep(.n-menu-item-content .n-menu-item-content__icon) {
+  margin-right: 6px;
 }
 </style>

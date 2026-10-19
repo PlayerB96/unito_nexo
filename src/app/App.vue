@@ -14,3 +14,14 @@ const { tema } = useTema()
     </n-message-provider>
   </n-config-provider>
 </template>
+
+<style>
+/* Cambio dark/light instantáneo: Naive UI anima color/fondo ~0.3s por defecto */
+html.sin-transicion-tema,
+html.sin-transicion-tema *,
+html.sin-transicion-tema *::before,
+html.sin-transicion-tema *::after {
+  transition: none !important;
+  animation: none !important;
+}
+</style>

@@ -128,7 +128,7 @@ const columnas: DataTableColumns<Carga> = [
           <n-text v-for="hoja in hojasSemana" :key="hoja.codigo" tag="div">
             <n-text strong>{{ hoja.codigo }}</n-text>
             <n-text depth="3">
-              · {{ hoja.area }} · {{ hoja.lineas }} líneas ·
+              · {{ hoja.estilo }} · {{ hoja.ubicacion }} · {{ hoja.lineas }} líneas ·
               {{ hoja.asignadaA ?? 'Sin asignar' }}
             </n-text>
           </n-text>

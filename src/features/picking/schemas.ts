@@ -13,8 +13,8 @@ export const faltanteSchema = z.object({
 })
 
 export const asignacionSchema = z.object({
-  codigos: z.array(z.string().trim().min(1)).min(1, 'Elige al menos una hoja.'),
-  destino: z.string().trim().min(1, 'Elige un operario.'),
+  codigos: z.array(z.string().trim().min(1)).min(1, 'Elige al menos un estilo.'),
+  destino: z.string().trim().min(1, 'Elige un colaborador.'),
 })
 
 export const cuentaSchema = z.object({
