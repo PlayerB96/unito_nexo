@@ -1,0 +1,3575 @@
+[
+  {
+    "estilo": "ARV-1523",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1524",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 11,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1525",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1527",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1547",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1606",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1607",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1609",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1623",
+    "tipo": "CASACA",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1685",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1688",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1725",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1728",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1807",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1830",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1835",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1841",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1842",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1844",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1854",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1855",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1856",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1857",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1866",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1867",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 4,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1868",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1870",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1871",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1873",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 4,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1874",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1875",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1878",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 4,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1879",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1880",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 7,
+    "pedido": 22,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1881",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 10,
+    "pedido": 18,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1882",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 4,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ARV-1908",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 12,
+    "pedido": 108,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1911",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 12,
+    "pedido": 180,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1912",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 10,
+    "pedido": 18,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1913",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 8,
+    "pedido": 24,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1914",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 12,
+    "pedido": 144,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1917",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 12,
+    "pedido": 198,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1918",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 8,
+    "pedido": 60,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ARV-1919",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 12,
+    "pedido": 108,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "BERNAL-156",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 20,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-245",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-247",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-250",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-265",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-267",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-276",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-286",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-287",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-288",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 66,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-293",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-294",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-295",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-296",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B08",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-301",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-302",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 3,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-304",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-306",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-310",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 6,
+    "pedido": 16,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-311",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 5,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-312",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-313",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-314",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B07",
+    "lineas": 12,
+    "pedido": 48,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-316",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-317",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 4,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-318",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-319",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 3,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "BEST BOY-320",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 11,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "C&S-102",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 32,
+    "pedido": 53,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "C&S-103",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B07",
+    "lineas": 3,
+    "pedido": 11,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "C&S-104",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "DEFCON-599.25",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESPINOZA-1",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B15",
+    "lineas": 2,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESPINOZA-12",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B10",
+    "lineas": 1,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESPINOZA-16",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-594",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-603",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 18,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-606",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-612",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 5,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-617",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-620",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-642",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-652",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 18,
+    "pedido": 29,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-653",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-660",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 7,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-667",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-669",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-670",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-675",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 18,
+    "pedido": 18,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-677",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B07",
+    "lineas": 3,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-678",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-684",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-685",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 1,
+    "pedido": 1,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-688",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 12,
+    "pedido": 92,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-694",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-700",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B12",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-702",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-706",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B12",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-715",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-719",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 11,
+    "pedido": 93,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-720",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-721",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-722",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-725",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-727",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-729",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-731",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 3,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-732",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 3,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-739",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 4,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-740",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-743",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 12,
+    "pedido": 24,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-745",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B10",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-748",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B08",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-749",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-751",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B11",
+    "lineas": 4,
+    "pedido": 13,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-752",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 68,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-753",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-754",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 52,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-756",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-757",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-759",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-764",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-766",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-768",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-769",
+    "tipo": "CASACA",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-772",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 3,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-773",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-774",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-774.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 11,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-775",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 7,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-775.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 14,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-780",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 45,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-780.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 2,
+    "pedido": 7,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-781",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 78,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-781.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 6,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-782",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 4,
+    "pedido": 32,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-782.S",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 1,
+    "pedido": 1,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-784",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 7,
+    "pedido": 18,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-784.S",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 1,
+    "pedido": 1,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-787",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 7,
+    "pedido": 14,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-788",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-789",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-789.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 9,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-791",
+    "tipo": "ENTERIZO",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-791.S",
+    "tipo": "ENTERIZO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 9,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-792",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 356,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-792.S",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-793",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 3,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-793.S",
+    "tipo": "BLUSA",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-796.S",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 6,
+    "pedido": 26,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-797",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 264,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-797.S",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 12,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-803",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 12,
+    "pedido": 270,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-803.S",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 9,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-804",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 5,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ESSIE-807",
+    "tipo": "ENTERIZO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 482,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-807.S",
+    "tipo": "ENTERIZO",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 6,
+    "pedido": 18,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-808",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 458,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ESSIE-808.S",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 3,
+    "pedido": 4,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "FLORIDA-1031",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1081",
+    "tipo": "JUMPER",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 18,
+    "pedido": 27,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1103",
+    "tipo": "OVEROL",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 54,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1104",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B15",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1105",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1106",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 5,
+    "pedido": 15,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1126",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1127",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B11",
+    "lineas": 2,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1128",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B15",
+    "lineas": 2,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1129",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B08",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1136",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 140,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1137",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B11",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1138",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B12",
+    "lineas": 7,
+    "pedido": 20,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1145",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 24,
+    "pedido": 124,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "FLORIDA-1146",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 110,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1147.S",
+    "tipo": "JUMPER",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 6,
+    "pedido": 14,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1148",
+    "tipo": "JUMPER",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 12,
+    "pedido": 30,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1148.S",
+    "tipo": "JUMPER",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1164",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B10",
+    "lineas": 3,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "FLORIDA-1167",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 480,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "FLORIDA-1167.S",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B18",
+    "lineas": 5,
+    "pedido": 21,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GAZO-217.25",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 37,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-218.26",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 6,
+    "pedido": 135,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-226",
+    "tipo": "CAFARENA",
+    "segmento": "UNISEX INFANTIL",
+    "ubicacion": "B06",
+    "lineas": 2,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-260",
+    "tipo": "POLO",
+    "segmento": "BEBO",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 10,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-295.26",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 230,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-296",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 35,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-296.25",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 4,
+    "pedido": 60,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-296.26",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 3,
+    "pedido": 70,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-307",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 300,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-308",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 7,
+    "pedido": 450,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GAZO-310",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 270,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1003",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1010",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1013",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1017",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1024",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1031",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1053",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1056",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1057",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1058",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1059",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1060",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1062",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1063",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1064",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1065",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1066",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1079",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1083",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1085",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1086",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1087",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1090",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1091",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1092",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1093",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1094",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1095",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1097",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1098",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 5,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1099",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1100",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1101",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1102",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1103",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1105",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 7,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1106",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 6,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1107",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 11,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1108",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 5,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1109",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1110",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 5,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1111",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 3,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1112",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 10,
+    "pedido": 23,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1113",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 5,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1114",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 8,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1115",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 4,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1118",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 198,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1120",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 234,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1121",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 234,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1123",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B03",
+    "lineas": 11,
+    "pedido": 16,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1125",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 120,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1126",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 6,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1128",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 8,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1129",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 3,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1130",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 120,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1131",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 264,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-1132",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-1134",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 12,
+    "pedido": 264,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "GUGGI-975",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GUGGI-999",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "GVB-1",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-102",
+    "tipo": "PANTALONETA",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-111",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B10",
+    "lineas": 6,
+    "pedido": 14,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-112",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 26,
+    "pedido": 137,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-113",
+    "tipo": "PANTALONETA",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 56,
+    "pedido": 233,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-114",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 2,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-89",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 4,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "HUAROTO-99",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 6,
+    "pedido": 16,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "IMCH-34",
+    "tipo": "CHALECO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ITDC-184",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 41,
+    "pedido": 50,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "JCE-157",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-170",
+    "tipo": "JUMPER",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-195",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-204",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 3,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-206",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B19",
+    "lineas": 2,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-207",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B19",
+    "lineas": 6,
+    "pedido": 24,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-210",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-211",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-213",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 3,
+    "pedido": 13,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-216",
+    "tipo": "CONJUNTO 2PZAS",
+    "segmento": "NIÑA",
+    "ubicacion": "B07",
+    "lineas": 6,
+    "pedido": 25,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-220",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-221",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 503,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "JCE-223",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "JCE-244",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 493,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "JCE-245",
+    "tipo": "VESTIDO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 537,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "JVAL-01",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 2,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-186",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B08",
+    "lineas": 4,
+    "pedido": 14,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-190",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B08",
+    "lineas": 3,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-191",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-192",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B08",
+    "lineas": 5,
+    "pedido": 15,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-193",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 24,
+    "pedido": 85,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "MDC-195",
+    "tipo": "BERMUDA",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 24,
+    "pedido": 220,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-196",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B07",
+    "lineas": 9,
+    "pedido": 20,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "MDC-200",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 24,
+    "pedido": 360,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "OCAMPO-58",
+    "tipo": "CAMISA",
+    "segmento": "NIÑO",
+    "ubicacion": "B07",
+    "lineas": 7,
+    "pedido": 11,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "OCAMPO-71",
+    "tipo": "CAMISA",
+    "segmento": "NIÑO",
+    "ubicacion": "B07",
+    "lineas": 5,
+    "pedido": 11,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-757",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 3,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-758",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 2,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-808",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-812",
+    "tipo": "CASACA",
+    "segmento": "NIÑA",
+    "ubicacion": "B08",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-825",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B10",
+    "lineas": 1,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-826",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-827",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 2,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-829",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B19",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-830",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B06",
+    "lineas": 24,
+    "pedido": 86,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "OKY DOKY-831",
+    "tipo": "FALDA-SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 6,
+    "pedido": 16,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-832",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 2,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-833",
+    "tipo": "FALDA-SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 27,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-835",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B07",
+    "lineas": 5,
+    "pedido": 28,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-836",
+    "tipo": "PANTALON",
+    "segmento": "NIÑA",
+    "ubicacion": "B12",
+    "lineas": 24,
+    "pedido": 47,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "OKY DOKY-837",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B05",
+    "lineas": 24,
+    "pedido": 58,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "OKY DOKY-839",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 24,
+    "pedido": 597,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "SANRIO-17",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B15",
+    "lineas": 3,
+    "pedido": 15,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "SANRIO-19",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B11",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "SANRIO-20",
+    "tipo": "CONJUNTO",
+    "segmento": "NIÑA",
+    "ubicacion": "B11",
+    "lineas": 3,
+    "pedido": 9,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "TOTO-363",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B19",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "TOTO-364",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B11",
+    "lineas": 2,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "TOTO-365",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B04",
+    "lineas": 3,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "TOTO-368",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B12",
+    "lineas": 6,
+    "pedido": 12,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "TOTO-369",
+    "tipo": "JOGGER",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 21,
+    "pedido": 546,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "TOTO-371",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B05",
+    "lineas": 21,
+    "pedido": 128,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "TOTO-372",
+    "tipo": "PANTALON",
+    "segmento": "NIÑO",
+    "ubicacion": "B11",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "VGFA-22",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "VMA-173",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "VMA-175",
+    "tipo": "POLO",
+    "segmento": "NIÑO",
+    "ubicacion": "B09",
+    "lineas": 18,
+    "pedido": 166,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-633.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-637",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-637.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-643",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B18",
+    "lineas": 3,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-649.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-651",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-652",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-655",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-660",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-668",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-677.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-681.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-687",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-687.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 6,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-696",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-707",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-708.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-709",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-709.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-711",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-712.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-715",
+    "tipo": "CAFARENA",
+    "segmento": "UNISEX INFANTIL",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 5,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-724",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-725.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-728",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-730.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-732",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-734",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-735",
+    "tipo": "JOGGER",
+    "segmento": "UNISEX INFANTIL",
+    "ubicacion": "B06",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-738",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-738.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-739",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-739.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-740",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-741",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 4,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-741.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-742.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-743",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-744",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-744.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-745",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-745.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-746.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-747",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-749",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-749.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-750",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 4,
+    "pedido": 25,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-751",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-752",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 22,
+    "pedido": 8,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-752.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-753",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 4,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-753.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-754",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 25,
+    "pedido": 194,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-754.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 5,
+    "pedido": 78,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-755",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-756.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 2,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-757",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 11,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-757.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 3,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-758",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 25,
+    "pedido": 125,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-758.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 50,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-759",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 2,
+    "pedido": 4,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-760",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-763",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 20,
+    "pedido": 7,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-763.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 1,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-765",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-765.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 3,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-769",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 18,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-769.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "SIN-BODEGA",
+    "lineas": 5,
+    "pedido": 0,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-774",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 25,
+    "pedido": 100,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-774.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B04",
+    "lineas": 5,
+    "pedido": 40,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-775",
+    "tipo": "SHORT",
+    "segmento": "NIÑA",
+    "ubicacion": "B03",
+    "lineas": 1,
+    "pedido": 2,
+    "requisicion": "R"
+  },
+  {
+    "estilo": "ZARAITH-776",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 25,
+    "pedido": 50,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-776.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 20,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-777",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 25,
+    "pedido": 50,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-777.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 20,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-779",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 25,
+    "pedido": 50,
+    "requisicion": "N"
+  },
+  {
+    "estilo": "ZARAITH-779.1",
+    "tipo": "POLO",
+    "segmento": "NIÑA",
+    "ubicacion": "B09",
+    "lineas": 5,
+    "pedido": 20,
+    "requisicion": "N"
+  }
+]
