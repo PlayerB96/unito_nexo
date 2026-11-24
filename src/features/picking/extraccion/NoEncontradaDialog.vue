@@ -49,8 +49,9 @@ function confirmar() {
   >
     <n-space v-if="linea" vertical :size="16">
       <n-text>
-        {{ linea.descripcion }}, {{ linea.cantidad }} {{ linea.unidad }}. Indica dónde buscaste. El
-        sistema suelta la reserva y busca otra cobertura de producción.
+        {{ linea.estilo }} · T/{{ linea.talla }} · {{ linea.color }} —
+        {{ linea.cantidad }} {{ linea.unidad }} pendientes. Indica dónde buscaste. El sistema suelta
+        la reserva y busca otra cobertura de producción.
       </n-text>
       <n-form-item
         label="Ubicación donde busqué"

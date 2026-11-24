@@ -12,6 +12,13 @@ export const faltanteSchema = z.object({
   ubicacion: z.string().trim().min(1, 'Indica la ubicación donde buscaste.'),
 })
 
+export const retiroSchema = z.object({
+  cantidad: z
+    .number({ error: 'Indica cuántas unidades encontraste.' })
+    .int('La cantidad debe ser entera.')
+    .min(1, 'Retira al menos 1 unidad.'),
+})
+
 export const asignacionSchema = z.object({
   codigos: z.array(z.string().trim().min(1)).min(1, 'Elige al menos un estilo.'),
   destino: z.string().trim().min(1, 'Elige un colaborador.'),

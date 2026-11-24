@@ -41,7 +41,13 @@ export type EstadoLinea = 'asignada' | 'retirada' | 'pendiente_produccion'
 export type Linea = {
   id: string
   sku: string
+  estilo: string
+  color: string
+  talla: string
   descripcion: string
+  /** Unidades pedidas al nacer la hoja. */
+  pedido: number
+  /** Unidades que aún faltan por retirar. */
   cantidad: number
   unidad: string
   ubicacion: string

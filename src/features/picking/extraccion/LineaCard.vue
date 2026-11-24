@@ -1,80 +1,134 @@
 <script setup lang="ts">
 import { MapPin, PackageCheck, PackageX } from 'lucide-vue-next'
-import { useEsMovil } from '../../../shared/ui/useEsMovil'
+import { computed, ref, watch } from 'vue'
+import { useEsCompacto } from '../../../shared/ui/useEsCompacto'
+import { retiroSchema } from '../schemas'
 import type { Linea } from '../types'
 
-defineProps<{
+const props = defineProps<{
   linea: Linea
   bloqueada: boolean
 }>()
 
-const movil = useEsMovil()
+const compacto = useEsCompacto()
+const cantidad = ref(props.linea.cantidad)
+const error = ref('')
+
+watch(
+  () => props.linea.cantidad,
+  (valor) => {
+    cantidad.value = valor
+    error.value = ''
+  },
+)
 
 const emit = defineEmits<{
-  retirar: []
+  retirar: [cantidad: number]
   noEncontrada: []
 }>()
+
+const etiquetaEstado = computed(() => {
+  if (props.linea.estado === 'retirada') return { tipo: 'success' as const, texto: 'Completo' }
+  if (props.linea.reubicada) return { tipo: 'warning' as const, texto: 'Nueva ubicación' }
+  if (props.linea.cantidad < props.linea.pedido)
+    return { tipo: 'info' as const, texto: 'Parcial' }
+  return { tipo: 'default' as const, texto: 'Por retirar' }
+})
+
+function confirmar() {
+  const validacion = retiroSchema.safeParse({ cantidad: cantidad.value })
+  if (!validacion.success) {
+    error.value = validacion.error.issues[0]?.message ?? 'Indica la cantidad.'
+    return
+  }
+  if (validacion.data.cantidad > props.linea.cantidad) {
+    error.value = `Solo quedan ${props.linea.cantidad} ${props.linea.unidad}.`
+    return
+  }
+  error.value = ''
+  emit('retirar', validacion.data.cantidad)
+}
 </script>
 
 <template>
   <n-card
     size="small"
-    :title="linea.descripcion"
-    :content-style="movil ? 'padding: 4px 8px 8px' : undefined"
-    :header-style="movil ? 'padding: 8px 8px 0' : undefined"
+    :content-style="compacto ? 'padding: 10px 10px 12px' : 'padding: 12px 14px'"
+    :header-style="compacto ? 'padding: 10px 10px 0' : 'padding: 12px 14px 0'"
   >
-    <template #header-extra>
-      <n-tag v-if="linea.estado === 'retirada'" type="success" size="small">Retirada</n-tag>
-      <n-tag v-else-if="linea.reubicada" type="warning" size="small">Nueva ubicación</n-tag>
-      <n-tag v-else size="small">Por retirar</n-tag>
+    <template #header>
+      <n-space :size="6" align="center" style="flex-wrap: wrap">
+        <n-tag type="primary" size="small" :bordered="false">T/{{ linea.talla }}</n-tag>
+        <n-tag size="small" :bordered="false">{{ linea.color }}</n-tag>
+        <n-tag :type="etiquetaEstado.tipo" size="small">{{ etiquetaEstado.texto }}</n-tag>
+      </n-space>
     </template>
-    <n-space vertical :size="movil ? 8 : 12">
-      <n-text depth="3">SKU {{ linea.sku }} · {{ linea.cantidad }} {{ linea.unidad }}</n-text>
-      <n-space :size="movil ? 6 : 8" align="center">
+    <n-space vertical :size="compacto ? 10 : 12">
+      <n-space justify="space-between" align="center" style="flex-wrap: wrap; gap: 4px">
+        <n-text depth="3">
+          Quedan
+          <n-text strong>{{ linea.cantidad }}</n-text>
+          de {{ linea.pedido }} {{ linea.unidad }}
+        </n-text>
+        <n-text depth="3" style="font-size: 12px">SKU {{ linea.sku }}</n-text>
+      </n-space>
+      <n-space :size="6" align="center" style="flex-wrap: wrap">
         <MapPin :size="16" />
         <n-text strong>{{ linea.ubicacion }}</n-text>
         <n-text depth="3">Lote {{ linea.lote }}</n-text>
-        <n-text depth="3">{{ linea.ordenProduccion }}</n-text>
       </n-space>
       <n-alert v-if="linea.reubicada && linea.ubicacionAnterior" type="warning" :show-icon="false">
-        Antes estaba en {{ linea.ubicacionAnterior }}, lote {{ linea.loteAnterior }}. La hoja se
-        actualizó con esta ubicación.
+        Antes en {{ linea.ubicacionAnterior }}, lote {{ linea.loteAnterior }}.
       </n-alert>
-      <n-grid
-        v-if="linea.estado === 'asignada'"
-        cols="2"
-        :x-gap="movil ? 8 : 12"
-        :y-gap="8"
-      >
-        <n-gi>
-          <n-button
-            type="primary"
-            block
+      <template v-if="linea.estado === 'asignada'">
+        <n-form-item
+          label="Cantidad encontrada"
+          :validation-status="error ? 'error' : undefined"
+          :feedback="error || undefined"
+          :show-label="true"
+          style="margin-bottom: 0"
+        >
+          <n-input-number
+            v-model:value="cantidad"
+            :min="1"
+            :max="linea.cantidad"
+            :step="1"
+            button-placement="both"
+            style="width: 100%"
             :disabled="bloqueada"
-            :style="movil ? 'white-space: normal; height: auto; padding: 8px 6px' : undefined"
-            @click="emit('retirar')"
-          >
-            <template #icon>
-              <PackageCheck :size="18" />
-            </template>
-            La retiré
-          </n-button>
-        </n-gi>
-        <n-gi>
-          <n-button
-            block
-            secondary
-            :disabled="bloqueada"
-            :style="movil ? 'white-space: normal; height: auto; padding: 8px 6px' : undefined"
-            @click="emit('noEncontrada')"
-          >
-            <template #icon>
-              <PackageX :size="18" />
-            </template>
-            No está aquí
-          </n-button>
-        </n-gi>
-      </n-grid>
+          />
+        </n-form-item>
+        <n-grid cols="2" :x-gap="compacto ? 8 : 12" :y-gap="8">
+          <n-gi>
+            <n-button
+              type="primary"
+              block
+              :disabled="bloqueada"
+              :style="compacto ? 'min-height: 44px; white-space: normal; height: auto; padding: 10px 6px' : 'min-height: 40px'"
+              @click="confirmar"
+            >
+              <template #icon>
+                <PackageCheck :size="18" />
+              </template>
+              Encontré
+            </n-button>
+          </n-gi>
+          <n-gi>
+            <n-button
+              block
+              secondary
+              :disabled="bloqueada"
+              :style="compacto ? 'min-height: 44px; white-space: normal; height: auto; padding: 10px 6px' : 'min-height: 40px'"
+              @click="emit('noEncontrada')"
+            >
+              <template #icon>
+                <PackageX :size="18" />
+              </template>
+              No está
+            </n-button>
+          </n-gi>
+        </n-grid>
+      </template>
     </n-space>
   </n-card>
 </template>

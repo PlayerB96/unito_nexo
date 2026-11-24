@@ -5,6 +5,7 @@ import type {
   Evento,
   Hoja,
   HojaCola,
+  Linea,
   Pendiente,
   UsuarioPrueba,
 } from './types'
@@ -160,81 +161,178 @@ export const pendientesIniciales: Pendiente[] = [
   },
 ]
 
+function lineaHoja(parte: {
+  id: string
+  sku: string
+  estilo: string
+  color: string
+  talla: string
+  descripcion: string
+  pedido: number
+  ubicacion: string
+  lote: string
+  ordenProduccion: string
+}): Linea {
+  return {
+    ...parte,
+    cantidad: parte.pedido,
+    unidad: 'und',
+    estado: 'asignada',
+    reubicada: false,
+    ubicacionAnterior: null,
+    loteAnterior: null,
+  }
+}
+
 export function crearHoja(): Hoja {
   return {
     codigo: 'HE-1042',
     turno: 'Mañana',
     fecha: '5 oct 2026',
     lineas: [
-      {
-        id: 'ln-polo',
-        sku: '104582',
-        descripcion: 'Polo piqué blanco T/M',
-        cantidad: 24,
-        unidad: 'und',
+      lineaHoja({
+        id: 'ln-essie-6-bl',
+        sku: '80706101',
+        estilo: 'ESSIE-807',
+        color: 'BLANCO',
+        talla: '6',
+        descripcion: 'ENTERIZO NIÑA',
+        pedido: 12,
         ubicacion: 'A-12-03',
         lote: 'L-441',
         ordenProduccion: 'OP-3108',
-        estado: 'asignada',
-        reubicada: false,
-        ubicacionAnterior: null,
-        loteAnterior: null,
-      },
-      {
-        id: 'ln-cierre',
-        sku: '220191',
-        descripcion: 'Cierre metálico 20 cm',
-        cantidad: 80,
-        unidad: 'und',
+      }),
+      lineaHoja({
+        id: 'ln-essie-8-bl',
+        sku: '80708101',
+        estilo: 'ESSIE-807',
+        color: 'BLANCO',
+        talla: '8',
+        descripcion: 'ENTERIZO NIÑA',
+        pedido: 18,
+        ubicacion: 'A-12-04',
+        lote: 'L-441',
+        ordenProduccion: 'OP-3108',
+      }),
+      lineaHoja({
+        id: 'ln-essie-6-rs',
+        sku: '80706102',
+        estilo: 'ESSIE-807',
+        color: 'ROSA',
+        talla: '6',
+        descripcion: 'ENTERIZO NIÑA',
+        pedido: 10,
+        ubicacion: 'A-12-05',
+        lote: 'L-442',
+        ordenProduccion: 'OP-3108',
+      }),
+      lineaHoja({
+        id: 'ln-essie-10-rs',
+        sku: '80710102',
+        estilo: 'ESSIE-807',
+        color: 'ROSA',
+        talla: '10',
+        descripcion: 'ENTERIZO NIÑA',
+        pedido: 8,
+        ubicacion: 'A-12-06',
+        lote: 'L-442',
+        ordenProduccion: 'OP-3108',
+      }),
+      lineaHoja({
+        id: 'ln-arv-4-az',
+        sku: '19120403',
+        estilo: 'ARV-1912',
+        color: 'AZUL',
+        talla: '4',
+        descripcion: 'POLO NIÑO',
+        pedido: 20,
         ubicacion: 'B-04-01',
         lote: 'L-118',
         ordenProduccion: 'OP-3114',
-        estado: 'asignada',
-        reubicada: false,
-        ubicacionAnterior: null,
-        loteAnterior: null,
-      },
-      {
-        id: 'ln-hilo',
-        sku: '331007',
-        descripcion: 'Hilo poliéster negro',
-        cantidad: 12,
-        unidad: 'conos',
-        ubicacion: 'B-07-02',
-        lote: 'L-090',
-        ordenProduccion: 'OP-3088',
-        estado: 'asignada',
-        reubicada: false,
-        ubicacionAnterior: null,
-        loteAnterior: null,
-      },
-      {
-        id: 'ln-etiqueta',
-        sku: '118440',
-        descripcion: 'Etiqueta tejida de marca',
-        cantidad: 500,
-        unidad: 'und',
-        ubicacion: 'D-01-02',
-        lote: 'L-330',
+      }),
+      lineaHoja({
+        id: 'ln-arv-6-az',
+        sku: '19120603',
+        estilo: 'ARV-1912',
+        color: 'AZUL',
+        talla: '6',
+        descripcion: 'POLO NIÑO',
+        pedido: 24,
+        ubicacion: 'B-04-02',
+        lote: 'L-118',
+        ordenProduccion: 'OP-3114',
+      }),
+      lineaHoja({
+        id: 'ln-arv-4-ng',
+        sku: '19120401',
+        estilo: 'ARV-1912',
+        color: 'NEGRO',
+        talla: '4',
+        descripcion: 'POLO NIÑO',
+        pedido: 15,
+        ubicacion: 'B-04-03',
+        lote: 'L-119',
+        ordenProduccion: 'OP-3114',
+      }),
+      lineaHoja({
+        id: 'ln-gazo-s-bl',
+        sku: '31101501',
+        estilo: 'GAZO-311',
+        color: 'BLANCO',
+        talla: 'S',
+        descripcion: 'POLO DAMA',
+        pedido: 30,
+        ubicacion: 'C-02-07',
+        lote: 'L-205',
         ordenProduccion: 'OP-3095',
-        estado: 'asignada',
-        reubicada: false,
-        ubicacionAnterior: null,
-        loteAnterior: null,
-      },
+      }),
+      lineaHoja({
+        id: 'ln-gazo-m-bl',
+        sku: '31102501',
+        estilo: 'GAZO-311',
+        color: 'BLANCO',
+        talla: 'M',
+        descripcion: 'POLO DAMA',
+        pedido: 28,
+        ubicacion: 'C-02-08',
+        lote: 'L-205',
+        ordenProduccion: 'OP-3095',
+      }),
+      lineaHoja({
+        id: 'ln-gazo-m-ng',
+        sku: '31102502',
+        estilo: 'GAZO-311',
+        color: 'NEGRO',
+        talla: 'M',
+        descripcion: 'POLO DAMA',
+        pedido: 16,
+        ubicacion: 'C-02-09',
+        lote: 'L-206',
+        ordenProduccion: 'OP-3095',
+      }),
     ],
   }
 }
 
 export const coberturas: Record<string, Cobertura | null> = {
-  'ln-polo': null,
-  'ln-cierre': {
-    ubicacion: 'C-02-07',
-    lote: 'L-205',
+  'ln-essie-6-bl': null,
+  'ln-essie-8-bl': {
+    ubicacion: 'A-14-01',
+    lote: 'L-450',
+    ordenProduccion: 'OP-3108',
+  },
+  'ln-essie-6-rs': null,
+  'ln-essie-10-rs': null,
+  'ln-arv-4-az': {
+    ubicacion: 'B-05-01',
+    lote: 'L-130',
     ordenProduccion: 'OP-3114',
   },
-  'ln-hilo': null,
-  'ln-etiqueta': null,
+  'ln-arv-6-az': null,
+  'ln-arv-4-ng': null,
+  'ln-gazo-s-bl': null,
+  'ln-gazo-m-bl': null,
+  'ln-gazo-m-ng': null,
 }
 
 export function eventoInicial(): Evento {
