@@ -15,6 +15,7 @@ import {
   UserCheck,
   Users,
 } from 'lucide-vue-next'
+import { useMessage } from 'naive-ui'
 import { computed, ref, watch } from 'vue'
 import PlataformaLayout from '../../../app/PlataformaLayout.vue'
 import { useEsMovil } from '../../../shared/ui/useEsMovil'
@@ -73,6 +74,7 @@ type DetalleFamilia = {
 
 const picking = usePickingStore()
 const movil = useEsMovil()
+const mensaje = useMessage()
 
 const [semanaActual, semanaSiguiente] = semanasAsignables()
 const semana = ref<number>(semanaActual)
@@ -86,7 +88,6 @@ const requisiciones = ref<Requisicion[]>(['N', 'R'])
 /** Por defecto solo libres: al asignar salen de la grilla. */
 const estadosFiltro = ref<EstadoHoja[]>(['libre'])
 const seleccion = ref<string[]>([])
-const aviso = ref('')
 const drawerCarga = ref(false)
 const modalDetalle = ref(false)
 const expandida = ref<string | null>(null)
@@ -96,7 +97,6 @@ const ESTILOS_DETALLE_VISIBLE = 5
 
 watch(semana, () => {
   seleccion.value = []
-  aviso.value = ''
   filtroFamilia.value = null
   filtroUsuario.value = null
   filtroTipo.value = null
@@ -471,40 +471,26 @@ function asignar() {
     destino: destino.value ?? '',
   })
   if (!validacion.success) {
-    aviso.value = validacion.error.issues[0]?.message ?? 'Revisa la asignación.'
+    mensaje.error(validacion.error.issues[0]?.message ?? 'Revisa la asignación.')
     return
   }
-  const resultado = picking.asignarHojas(validacion.data.codigos, validacion.data.destino)
-  const familias = new Set(
-    [...resultado.asignadas, ...resultado.reasignadas].map((codigo) => {
-      const item = picking.cola.find((fila) => fila.codigo === codigo)
-      return item ? familiaDeEstilo(item.estilo) : ''
-    }),
-  )
-  const partes = [
-    resultado.asignadas.length > 0
-      ? `Asignados ${resultado.asignadas.length} estilos (${familias.size} familias).`
-      : '',
-    resultado.reasignadas.length > 0
-      ? `Reasignados ${resultado.reasignadas.length} estilos.`
-      : '',
-    resultado.omitidas.length > 0 ? `Sin cambio: ${resultado.omitidas.length}.` : '',
-  ].filter(Boolean)
-  aviso.value = partes.join(' ')
+  picking.asignarHojas(validacion.data.codigos, validacion.data.destino)
   seleccion.value = []
+  mensaje.success('Asignación lista. Mira la cola de la semana.')
 }
 
 function anular() {
   if (seleccion.value.length === 0) {
-    aviso.value = 'Elige al menos una familia o estilo.'
+    mensaje.warning('Elige al menos una familia o estilo.')
     return
   }
   const anuladas = picking.anularHojas(seleccion.value)
-  aviso.value =
-    anuladas.length > 0
-      ? `Quedaron libres ${anuladas.length} estilos.`
-      : 'No hay estilos asignados que puedas anular. Los atendidos no cambian.'
   seleccion.value = []
+  if (anuladas.length === 0) {
+    mensaje.warning('No hay estilos asignados que puedas anular. Los atendidos no cambian.')
+    return
+  }
+  mensaje.success('Quedaron libres. Mira la cola de la semana.')
 }
 
 function textoEstado(estado: EstadoHoja) {
@@ -574,10 +560,6 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
           </n-grid>
 
           <n-space align="center" :size="8" :wrap="true">
-            <n-text depth="3">
-              Selección · {{ loteSeleccion.familias }} familias · {{ loteSeleccion.estilos }}
-              estilos · {{ loteSeleccion.pedido }} und
-            </n-text>
             <n-button type="primary" :disabled="seleccion.length === 0" @click="asignar">
               Asignar
             </n-button>
@@ -626,150 +608,223 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
             </n-tag>
             <n-tag v-else-if="destino" type="success" size="small">Destino: {{ destino }}</n-tag>
             <n-tag v-else type="warning" size="small">Sin colaborador elegido</n-tag>
-            <n-tag size="small">
-              Semana · {{ conteo.total }} · libres {{ conteo.libres }} · asignados
-              {{ conteo.asignadas }} · atendidos {{ conteo.atendidas }}
-            </n-tag>
           </n-space>
 
-          <n-alert v-if="aviso" type="info" :show-icon="false">{{ aviso }}</n-alert>
-        </n-space>
-      </n-card>
-
-      <n-card size="small" :content-style="movil ? 'padding: 8px' : 'padding: 10px'">
-        <n-space vertical :size="8">
-          <n-space align="center" :size="8" :wrap="false">
-            <Filter :size="16" style="flex-shrink: 0" />
-            <n-text strong>Filtros</n-text>
-            <n-text depth="3" style="font-size: 12px">Por defecto solo libres</n-text>
-          </n-space>
-
-          <n-input
-            v-model:value="busqueda"
-            clearable
-            size="small"
-            placeholder="Buscar familia, estilo, usuario o tipo"
-          >
-            <template #prefix>
-              <Search :size="16" />
-            </template>
-          </n-input>
-
-          <n-grid cols="1 tablet:3" responsive="screen" :x-gap="8" :y-gap="6">
+          <n-grid cols="1 tablet:2" responsive="screen" :x-gap="8" :y-gap="8" class="resumen-grid">
             <n-gi>
-              <n-form-item label="Familia" :show-feedback="false" size="small">
-                <n-select
-                  v-model:value="filtroFamilia"
-                  :options="opcionesFamilia"
-                  clearable
-                  filterable
-                  size="small"
-                  placeholder="GUGGI, ARV…"
-                />
-              </n-form-item>
+              <div class="resumen-info">
+                <div class="resumen-info__titulo">
+                  <n-text depth="3">Para asignar ahora</n-text>
+                  <n-tooltip placement="top" trigger="hover">
+                    <template #trigger>
+                      <span class="resumen-info__ayuda" aria-label="Ayuda lote">
+                        <CircleHelp :size="12" />
+                      </span>
+                    </template>
+                    Es el lote que vas a asignar o anular. Si está en 0, aún no marcaste nada.
+                  </n-tooltip>
+                </div>
+                <div class="resumen-info__cifras">
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Familias</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ loteSeleccion.familias }}</n-text>
+                  </div>
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Estilos</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ loteSeleccion.estilos }}</n-text>
+                  </div>
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Und</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ loteSeleccion.pedido }}</n-text>
+                  </div>
+                </div>
+                <n-text depth="3" class="resumen-info__nota">
+                  Lo marcado con checkbox
+                </n-text>
+              </div>
             </n-gi>
             <n-gi>
-              <n-form-item label="Usuario" :show-feedback="false" size="small">
-                <n-select
-                  v-model:value="filtroUsuario"
-                  :options="opcionesUsuario"
-                  clearable
-                  filterable
-                  size="small"
-                  placeholder="NIÑA, NIÑO…"
-                />
-              </n-form-item>
-            </n-gi>
-            <n-gi>
-              <n-form-item label="Tipo de prenda" :show-feedback="false" size="small">
-                <n-select
-                  v-model:value="filtroTipo"
-                  :options="opcionesTipo"
-                  clearable
-                  filterable
-                  size="small"
-                  placeholder="POLO, BLUSA…"
-                />
-              </n-form-item>
+              <div class="resumen-info">
+                <div class="resumen-info__titulo">
+                  <n-text depth="3">Cola de la semana</n-text>
+                  <n-tooltip placement="top" trigger="hover">
+                    <template #trigger>
+                      <span class="resumen-info__ayuda" aria-label="Ayuda cola">
+                        <CircleHelp :size="12" />
+                      </span>
+                    </template>
+                    Total de la semana. Libres + asignados + atendidos suman el total.
+                  </n-tooltip>
+                </div>
+                <div class="resumen-info__cifras resumen-info__cifras--4">
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Total</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ conteo.total }}</n-text>
+                  </div>
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Libres</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ conteo.libres }}</n-text>
+                  </div>
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Asignados</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ conteo.asignadas }}</n-text>
+                  </div>
+                  <div class="resumen-cifra">
+                    <n-text depth="3" class="resumen-cifra__label">Atendidos</n-text>
+                    <n-text strong class="resumen-cifra__valor">{{ conteo.atendidas }}</n-text>
+                  </div>
+                </div>
+                <n-text depth="3" class="resumen-info__nota">
+                  Estados de toda la cola
+                </n-text>
+              </div>
             </n-gi>
           </n-grid>
 
-          <div class="filtro-grupo">
-            <div class="filtro-grupo__titulo">
-              <PackagePlus :size="14" />
-              <span>Requisición</span>
-            </div>
-            <div class="filtro-grupo__opciones">
-              <div
-                class="filtro-opcion"
-                :class="{ 'filtro-opcion--activa': requisiciones.includes('N') }"
-              >
-                <n-checkbox
-                  :checked="requisiciones.includes('N')"
-                  @update:checked="(activa: boolean) => setRequisicion('N', activa)"
-                >
-                  Nuevas
-                </n-checkbox>
-              </div>
-              <div
-                class="filtro-opcion"
-                :class="{ 'filtro-opcion--activa': requisiciones.includes('R') }"
-              >
-                <n-checkbox
-                  :checked="requisiciones.includes('R')"
-                  @update:checked="(activa: boolean) => setRequisicion('R', activa)"
-                >
-                  Reposición
-                </n-checkbox>
-              </div>
-            </div>
-          </div>
-
-          <div class="filtro-grupo">
-            <div class="filtro-grupo__titulo">
-              <UserCheck :size="14" />
-              <span>Estado</span>
-            </div>
-            <div class="filtro-grupo__opciones">
-              <div
-                class="filtro-opcion"
-                :class="{ 'filtro-opcion--activa': estadosFiltro.includes('libre') }"
-              >
-                <n-checkbox
-                  :checked="estadosFiltro.includes('libre')"
-                  @update:checked="(activa: boolean) => setEstado('libre', activa)"
-                >
-                  Libres
-                </n-checkbox>
-              </div>
-              <div
-                class="filtro-opcion"
-                :class="{ 'filtro-opcion--activa': estadosFiltro.includes('asignada') }"
-              >
-                <n-checkbox
-                  :checked="estadosFiltro.includes('asignada')"
-                  @update:checked="(activa: boolean) => setEstado('asignada', activa)"
-                >
-                  Asignados
-                </n-checkbox>
-              </div>
-              <div
-                class="filtro-opcion"
-                :class="{ 'filtro-opcion--activa': estadosFiltro.includes('atendida') }"
-              >
-                <n-checkbox
-                  :checked="estadosFiltro.includes('atendida')"
-                  @update:checked="(activa: boolean) => setEstado('atendida', activa)"
-                >
-                  Atendidos
-                </n-checkbox>
-              </div>
-            </div>
-          </div>
         </n-space>
       </n-card>
 
-      <n-space align="center" :size="8" :wrap="false">
+      <n-card
+        size="small"
+        class="filtros-card"
+        :content-style="movil ? 'padding: 8px' : 'padding: 8px 10px'"
+      >
+        <div class="filtros-panel">
+          <div class="filtros-panel__cabecera">
+            <Filter :size="15" />
+            <n-text strong>Filtros</n-text>
+            <n-text depth="3" style="font-size: 11px">Por defecto solo libres</n-text>
+          </div>
+
+          <n-grid
+            cols="1 tablet:2 desktop:4"
+            responsive="screen"
+            :x-gap="8"
+            :y-gap="6"
+            class="filtros-panel__campos"
+          >
+            <n-gi>
+              <n-input
+                v-model:value="busqueda"
+                clearable
+                size="small"
+                placeholder="Buscar familia, estilo…"
+              >
+                <template #prefix>
+                  <Search :size="14" />
+                </template>
+              </n-input>
+            </n-gi>
+            <n-gi>
+              <n-select
+                v-model:value="filtroFamilia"
+                :options="opcionesFamilia"
+                clearable
+                filterable
+                size="small"
+                placeholder="Familia"
+              />
+            </n-gi>
+            <n-gi>
+              <n-select
+                v-model:value="filtroUsuario"
+                :options="opcionesUsuario"
+                clearable
+                filterable
+                size="small"
+                placeholder="Usuario"
+              />
+            </n-gi>
+            <n-gi>
+              <n-select
+                v-model:value="filtroTipo"
+                :options="opcionesTipo"
+                clearable
+                filterable
+                size="small"
+                placeholder="Tipo de prenda"
+              />
+            </n-gi>
+          </n-grid>
+
+          <div class="filtros-panel__chips">
+            <div class="filtro-grupo">
+              <div class="filtro-grupo__titulo">
+                <PackagePlus :size="13" />
+                <span>Requisición</span>
+              </div>
+              <div class="filtro-grupo__opciones">
+                <div
+                  class="filtro-opcion"
+                  :class="{ 'filtro-opcion--activa': requisiciones.includes('N') }"
+                >
+                  <n-checkbox
+                    :checked="requisiciones.includes('N')"
+                    @update:checked="(activa: boolean) => setRequisicion('N', activa)"
+                  >
+                    Nuevas
+                  </n-checkbox>
+                </div>
+                <div
+                  class="filtro-opcion"
+                  :class="{ 'filtro-opcion--activa': requisiciones.includes('R') }"
+                >
+                  <n-checkbox
+                    :checked="requisiciones.includes('R')"
+                    @update:checked="(activa: boolean) => setRequisicion('R', activa)"
+                  >
+                    Reposición
+                  </n-checkbox>
+                </div>
+              </div>
+            </div>
+
+            <div class="filtro-grupo">
+              <div class="filtro-grupo__titulo">
+                <UserCheck :size="13" />
+                <span>Estado</span>
+              </div>
+              <div class="filtro-grupo__opciones">
+                <div
+                  class="filtro-opcion"
+                  :class="{ 'filtro-opcion--activa': estadosFiltro.includes('libre') }"
+                >
+                  <n-checkbox
+                    :checked="estadosFiltro.includes('libre')"
+                    @update:checked="(activa: boolean) => setEstado('libre', activa)"
+                  >
+                    Libres
+                  </n-checkbox>
+                </div>
+                <div
+                  class="filtro-opcion"
+                  :class="{ 'filtro-opcion--activa': estadosFiltro.includes('asignada') }"
+                >
+                  <n-checkbox
+                    :checked="estadosFiltro.includes('asignada')"
+                    @update:checked="(activa: boolean) => setEstado('asignada', activa)"
+                  >
+                    Asignados
+                  </n-checkbox>
+                </div>
+                <div
+                  class="filtro-opcion"
+                  :class="{ 'filtro-opcion--activa': estadosFiltro.includes('atendida') }"
+                >
+                  <n-checkbox
+                    :checked="estadosFiltro.includes('atendida')"
+                    @update:checked="(activa: boolean) => setEstado('atendida', activa)"
+                  >
+                    Atendidos
+                  </n-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </n-card>
+
+      <n-space align="center" :size="8" :wrap="true">
         <Boxes :size="18" />
         <n-space vertical :size="2">
           <n-text strong>Familias</n-text>
@@ -778,14 +833,13 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
             primero
           </n-text>
         </n-space>
+        <n-tag v-if="!destino" size="small" type="warning">
+          Elige colaborador arriba para poder asignar
+        </n-tag>
       </n-space>
 
       <n-empty
-        v-if="!puestoId"
-        description="Elige un puesto y un colaborador para asignar familias."
-      />
-      <n-empty
-        v-else-if="gruposFamilia.length === 0"
+        v-if="gruposFamilia.length === 0"
         description="No hay familias con ese filtro. Si ya asignaste, activa «Asignados»."
       />
       <n-grid
@@ -936,208 +990,200 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
       :title="destino ? `Carga de ${destino}` : 'Detalle'"
       :style="estiloModal"
       :bordered="false"
-      size="huge"
+      size="medium"
+      :header-style="{ padding: '10px 14px', fontSize: '15px' }"
       :content-style="{
         overflow: 'hidden',
         display: 'flex',
         flexDirection: 'column',
-        maxHeight: 'calc(90vh - 72px)',
-        paddingBottom: '12px',
+        maxHeight: 'calc(90vh - 56px)',
+        padding: '8px 12px 10px',
+        gap: '8px',
       }"
     >
-      <n-scrollbar style="max-height: calc(90vh - 96px)">
-        <n-space vertical :size="14">
-          <n-grid
-            v-if="cargaDestino"
-            cols="2 tablet:4"
-            responsive="screen"
-            :x-gap="8"
-            :y-gap="8"
-          >
-            <n-gi>
-              <n-tooltip placement="top" trigger="hover">
-                <template #trigger>
-                  <div class="metrica">
-                    <Layers :size="16" />
-                    <n-text depth="3" class="metrica__label">
-                      Familias
-                      <CircleHelp :size="12" />
-                    </n-text>
-                    <n-text strong class="metrica__valor">{{ cargaDestino.familias }}</n-text>
-                  </div>
-                </template>
-                Marcas distintas asignadas (GUGGI, ARV, ESSIE…). Agrupa estilos de la misma marca.
-              </n-tooltip>
-            </n-gi>
-            <n-gi>
-              <n-tooltip placement="top" trigger="hover">
-                <template #trigger>
-                  <div class="metrica">
-                    <Shirt :size="16" />
-                    <n-text depth="3" class="metrica__label">
-                      Estilos
-                      <CircleHelp :size="12" />
-                    </n-text>
-                    <n-text strong class="metrica__valor">{{ cargaDestino.estilos }}</n-text>
-                  </div>
-                </template>
-                Códigos de producto distintos asignados (por ejemplo ESSIE-807, ARV-1912).
-              </n-tooltip>
-            </n-gi>
-            <n-gi>
-              <n-tooltip placement="top" trigger="hover">
-                <template #trigger>
-                  <div class="metrica">
-                    <Package :size="16" />
-                    <n-text depth="3" class="metrica__label">
-                      Volumen
-                      <CircleHelp :size="12" />
-                    </n-text>
-                    <n-text strong class="metrica__valor">{{ cargaDestino.pedido }}</n-text>
-                  </div>
-                </template>
-                Unidades totales a retirar o surtir. Es la carga principal para equilibrar personas.
-              </n-tooltip>
-            </n-gi>
-            <n-gi>
-              <n-tooltip placement="top" trigger="hover">
-                <template #trigger>
-                  <div class="metrica">
-                    <Boxes :size="16" />
-                    <n-text depth="3" class="metrica__label">
-                      Líneas
-                      <CircleHelp :size="12" />
-                    </n-text>
-                    <n-text strong class="metrica__valor">{{ cargaDestino.lineas }}</n-text>
-                  </div>
-                </template>
-                Ítems de picking: cada posición a atender (estilo/SKU con talla o detalle y ubicación).
-              </n-tooltip>
-            </n-gi>
-          </n-grid>
-
-          <n-empty
-            v-if="detalleDestino.length === 0"
-            description="Este colaborador aún no tiene familias asignadas."
-          />
-          <n-space v-else vertical :size="12">
-            <div
-              v-for="familia in detalleDestino"
-              :key="familia.familia"
-              class="detalle-familia"
-              :class="{
-                'detalle-familia--abierta': detalleFamiliaAbierta(familia.familia),
-              }"
-            >
-              <div class="detalle-familia__cabecera">
-                <n-space justify="space-between" align="center" :wrap="true" :size="8">
-                  <n-space :size="8" align="center">
-                    <Layers :size="16" />
-                    <n-text strong>{{ familia.familia }}</n-text>
-                  </n-space>
-                  <n-text depth="3">
-                    {{ familia.estilos.length }} estilos · {{ familia.pedido }} und ·
-                    {{ familia.lineas }} líneas
+      <div v-if="cargaDestino" class="modal-metricas">
+        <n-grid cols="2 tablet:4" responsive="screen" :x-gap="6" :y-gap="6">
+          <n-gi>
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <div class="metrica">
+                  <Layers :size="13" />
+                  <n-text depth="3" class="metrica__label">
+                    Familias
+                    <CircleHelp :size="11" />
                   </n-text>
+                  <n-text strong class="metrica__valor">{{ cargaDestino.familias }}</n-text>
+                </div>
+              </template>
+              Marcas distintas asignadas (GUGGI, ARV, ESSIE…). Agrupa estilos de la misma marca.
+            </n-tooltip>
+          </n-gi>
+          <n-gi>
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <div class="metrica">
+                  <Shirt :size="13" />
+                  <n-text depth="3" class="metrica__label">
+                    Estilos
+                    <CircleHelp :size="11" />
+                  </n-text>
+                  <n-text strong class="metrica__valor">{{ cargaDestino.estilos }}</n-text>
+                </div>
+              </template>
+              Códigos de producto distintos asignados (por ejemplo ESSIE-807, ARV-1912).
+            </n-tooltip>
+          </n-gi>
+          <n-gi>
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <div class="metrica">
+                  <Package :size="13" />
+                  <n-text depth="3" class="metrica__label">
+                    Volumen
+                    <CircleHelp :size="11" />
+                  </n-text>
+                  <n-text strong class="metrica__valor">{{ cargaDestino.pedido }}</n-text>
+                </div>
+              </template>
+              Unidades totales a retirar o surtir. Es la carga principal para equilibrar personas.
+            </n-tooltip>
+          </n-gi>
+          <n-gi>
+            <n-tooltip placement="top" trigger="hover">
+              <template #trigger>
+                <div class="metrica">
+                  <Boxes :size="13" />
+                  <n-text depth="3" class="metrica__label">
+                    Líneas
+                    <CircleHelp :size="11" />
+                  </n-text>
+                  <n-text strong class="metrica__valor">{{ cargaDestino.lineas }}</n-text>
+                </div>
+              </template>
+              Ítems de picking: cada posición a atender (estilo/SKU con talla o detalle y ubicación).
+            </n-tooltip>
+          </n-gi>
+        </n-grid>
+      </div>
+
+      <n-empty
+        v-if="detalleDestino.length === 0"
+        description="Este colaborador aún no tiene familias asignadas."
+      />
+      <n-scrollbar v-else class="modal-detalle-scroll" style="max-height: calc(90vh - 210px)">
+        <n-space vertical :size="8">
+          <div
+            v-for="familia in detalleDestino"
+            :key="familia.familia"
+            class="detalle-familia"
+            :class="{
+              'detalle-familia--abierta': detalleFamiliaAbierta(familia.familia),
+            }"
+          >
+            <div class="detalle-familia__cabecera">
+              <n-space justify="space-between" align="center" :wrap="true" :size="6">
+                <n-space :size="6" align="center">
+                  <Layers :size="14" />
+                  <n-text strong>{{ familia.familia }}</n-text>
                 </n-space>
-              </div>
-              <n-scrollbar
-                v-if="detalleFamiliaAbierta(familia.familia)"
-                class="detalle-familia__scroll"
-                style="max-height: 280px"
-              >
-                <n-space vertical :size="6">
-                  <div
-                    v-for="estilo in estilosDetalleVisibles(familia)"
-                    :key="estilo.estilo"
-                    class="detalle-estilo"
-                  >
-                    <n-space justify="space-between" align="center" :wrap="true" :size="6">
-                      <n-space :size="6" align="center">
-                        <Shirt :size="14" />
-                        <n-text strong>{{ estilo.estilo }}</n-text>
-                      </n-space>
-                      <n-tag size="tiny" :type="tonoEstado(estilo.estado)">
-                        {{ textoEstado(estilo.estado) }}
-                      </n-tag>
-                    </n-space>
-                    <n-space :size="10" :wrap="true" style="margin-top: 4px">
-                      <n-space :size="4" align="center">
-                        <Package :size="12" />
-                        <n-text depth="3" style="font-size: 12px">{{ estilo.pedido }} und</n-text>
-                      </n-space>
-                      <n-space :size="4" align="center">
-                        <Boxes :size="12" />
-                        <n-text depth="3" style="font-size: 12px"
-                          >{{ estilo.lineas }} líneas</n-text
-                        >
-                      </n-space>
-                      <n-space :size="4" align="center">
-                        <MapPin :size="12" />
-                        <n-text depth="3" style="font-size: 12px">{{ estilo.ubicacion }}</n-text>
-                      </n-space>
-                      <n-space :size="4" align="center">
-                        <User :size="12" />
-                        <n-text depth="3" style="font-size: 12px">{{ estilo.usuario }}</n-text>
-                      </n-space>
-                      <n-text depth="3" style="font-size: 12px">{{ estilo.tipoPrenda }}</n-text>
-                    </n-space>
-                  </div>
-                </n-space>
-              </n-scrollbar>
-              <n-space v-else vertical :size="6" style="margin-top: 8px">
+                <n-text depth="3" style="font-size: 12px">
+                  {{ familia.estilos.length }} estilos · {{ familia.pedido }} und ·
+                  {{ familia.lineas }} líneas
+                </n-text>
+              </n-space>
+            </div>
+            <n-scrollbar
+              v-if="detalleFamiliaAbierta(familia.familia)"
+              class="detalle-familia__scroll"
+              style="max-height: 220px"
+            >
+              <n-space vertical :size="4">
                 <div
                   v-for="estilo in estilosDetalleVisibles(familia)"
                   :key="estilo.estilo"
                   class="detalle-estilo"
                 >
-                  <n-space justify="space-between" align="center" :wrap="true" :size="6">
-                    <n-space :size="6" align="center">
-                      <Shirt :size="14" />
-                      <n-text strong>{{ estilo.estilo }}</n-text>
+                  <n-space justify="space-between" align="center" :wrap="true" :size="4">
+                    <n-space :size="4" align="center">
+                      <Shirt :size="13" />
+                      <n-text strong style="font-size: 13px">{{ estilo.estilo }}</n-text>
                     </n-space>
                     <n-tag size="tiny" :type="tonoEstado(estilo.estado)">
                       {{ textoEstado(estilo.estado) }}
                     </n-tag>
                   </n-space>
-                  <n-space :size="10" :wrap="true" style="margin-top: 4px">
-                    <n-space :size="4" align="center">
-                      <Package :size="12" />
-                      <n-text depth="3" style="font-size: 12px">{{ estilo.pedido }} und</n-text>
+                  <n-space :size="8" :wrap="true" style="margin-top: 2px">
+                    <n-space :size="3" align="center">
+                      <Package :size="11" />
+                      <n-text depth="3" style="font-size: 11px">{{ estilo.pedido }} und</n-text>
                     </n-space>
-                    <n-space :size="4" align="center">
-                      <Boxes :size="12" />
-                      <n-text depth="3" style="font-size: 12px"
-                        >{{ estilo.lineas }} líneas</n-text
-                      >
+                    <n-space :size="3" align="center">
+                      <Boxes :size="11" />
+                      <n-text depth="3" style="font-size: 11px">{{ estilo.lineas }} líneas</n-text>
                     </n-space>
-                    <n-space :size="4" align="center">
-                      <MapPin :size="12" />
-                      <n-text depth="3" style="font-size: 12px">{{ estilo.ubicacion }}</n-text>
+                    <n-space :size="3" align="center">
+                      <MapPin :size="11" />
+                      <n-text depth="3" style="font-size: 11px">{{ estilo.ubicacion }}</n-text>
                     </n-space>
-                    <n-space :size="4" align="center">
-                      <User :size="12" />
-                      <n-text depth="3" style="font-size: 12px">{{ estilo.usuario }}</n-text>
+                    <n-space :size="3" align="center">
+                      <User :size="11" />
+                      <n-text depth="3" style="font-size: 11px">{{ estilo.usuario }}</n-text>
                     </n-space>
-                    <n-text depth="3" style="font-size: 12px">{{ estilo.tipoPrenda }}</n-text>
+                    <n-text depth="3" style="font-size: 11px">{{ estilo.tipoPrenda }}</n-text>
                   </n-space>
                 </div>
               </n-space>
-              <n-button
-                v-if="familia.estilos.length > ESTILOS_DETALLE_VISIBLE"
-                size="tiny"
-                quaternary
-                style="margin-top: 8px"
-                @click="alternarDetalleFamilia(familia.familia)"
+            </n-scrollbar>
+            <n-space v-else vertical :size="4" style="margin-top: 6px">
+              <div
+                v-for="estilo in estilosDetalleVisibles(familia)"
+                :key="estilo.estilo"
+                class="detalle-estilo"
               >
-                {{
-                  detalleFamiliaAbierta(familia.familia)
-                    ? 'Ver menos'
-                    : `Ver más · ${familia.estilos.length - ESTILOS_DETALLE_VISIBLE} estilos`
-                }}
-              </n-button>
-            </div>
-          </n-space>
+                <n-space justify="space-between" align="center" :wrap="true" :size="4">
+                  <n-space :size="4" align="center">
+                    <Shirt :size="13" />
+                    <n-text strong style="font-size: 13px">{{ estilo.estilo }}</n-text>
+                  </n-space>
+                  <n-tag size="tiny" :type="tonoEstado(estilo.estado)">
+                    {{ textoEstado(estilo.estado) }}
+                  </n-tag>
+                </n-space>
+                <n-space :size="8" :wrap="true" style="margin-top: 2px">
+                  <n-space :size="3" align="center">
+                    <Package :size="11" />
+                    <n-text depth="3" style="font-size: 11px">{{ estilo.pedido }} und</n-text>
+                  </n-space>
+                  <n-space :size="3" align="center">
+                    <Boxes :size="11" />
+                    <n-text depth="3" style="font-size: 11px">{{ estilo.lineas }} líneas</n-text>
+                  </n-space>
+                  <n-space :size="3" align="center">
+                    <MapPin :size="11" />
+                    <n-text depth="3" style="font-size: 11px">{{ estilo.ubicacion }}</n-text>
+                  </n-space>
+                  <n-space :size="3" align="center">
+                    <User :size="11" />
+                    <n-text depth="3" style="font-size: 11px">{{ estilo.usuario }}</n-text>
+                  </n-space>
+                  <n-text depth="3" style="font-size: 11px">{{ estilo.tipoPrenda }}</n-text>
+                </n-space>
+              </div>
+            </n-space>
+            <n-button
+              v-if="familia.estilos.length > ESTILOS_DETALLE_VISIBLE"
+              size="tiny"
+              quaternary
+              style="margin-top: 4px"
+              @click="alternarDetalleFamilia(familia.familia)"
+            >
+              {{
+                detalleFamiliaAbierta(familia.familia)
+                  ? 'Ver menos'
+                  : `Ver más · ${familia.estilos.length - ESTILOS_DETALLE_VISIBLE} estilos`
+              }}
+            </n-button>
+          </div>
         </n-space>
       </n-scrollbar>
     </n-modal>
@@ -1145,12 +1191,49 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
 </template>
 
 <style scoped>
-.filtro-grupo {
+.filtros-panel {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 8px 10px;
-  border-radius: 8px;
+}
+
+.filtros-panel__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filtros-panel__chips {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@media (min-width: 1024px) {
+  .filtros-panel {
+    gap: 6px;
+  }
+
+  .filtros-panel__chips {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .filtros-panel__chips .filtro-grupo {
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+  }
+}
+
+.filtro-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 6px;
   background: var(--n-color-embedded, rgba(127, 127, 127, 0.08));
   border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.2));
 }
@@ -1158,23 +1241,24 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
 .filtro-grupo__titulo {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  gap: 4px;
+  font-size: 11px;
   opacity: 0.72;
+  white-space: nowrap;
 }
 
 .filtro-grupo__opciones {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 4px;
 }
 
 .filtro-opcion {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px 2px 6px;
-  border-radius: 6px;
-  font-size: 13px;
+  padding: 1px 6px 1px 4px;
+  border-radius: 5px;
+  font-size: 12px;
   border: 1px dashed var(--n-border-color, rgba(127, 127, 127, 0.35));
   background: transparent;
   transition: background 0.15s ease, border-color 0.15s ease;
@@ -1228,22 +1312,114 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
   cursor: pointer;
 }
 
-.detalle-familia {
+.resumen-grid {
+  align-items: stretch;
+}
+
+.resumen-grid :deep(.n-gi) {
+  display: flex;
+}
+
+.resumen-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 118px;
   padding: 10px;
-  border-radius: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.25));
+  background: var(--n-color-embedded, rgba(127, 127, 127, 0.05));
+}
+
+.resumen-info__titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.resumen-info__ayuda {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.7;
+  cursor: default;
+}
+
+.resumen-info__cifras {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  flex: 1;
+}
+
+.resumen-info__cifras--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+  .resumen-info__cifras--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.resumen-cifra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 48px;
+  padding: 6px 4px;
+  border-radius: 5px;
+  border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.18));
+  text-align: center;
+}
+
+.resumen-cifra__label {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.resumen-cifra__valor {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.resumen-info__nota {
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+.modal-metricas {
+  flex-shrink: 0;
+}
+
+.modal-detalle-scroll {
+  flex: 1;
+  min-height: 0;
+}
+
+.detalle-familia {
+  padding: 6px 8px;
+  border-radius: 6px;
   border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.25));
   background: var(--n-color-embedded, rgba(127, 127, 127, 0.05));
 }
 
 .detalle-familia--abierta {
-  max-height: 380px;
+  max-height: 300px;
   display: flex;
   flex-direction: column;
 }
 
 .detalle-familia__cabecera {
   flex-shrink: 0;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
   margin-bottom: 2px;
   background: var(--n-color-embedded, rgba(127, 127, 127, 0.05));
   border-bottom: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.18));
@@ -1252,11 +1428,12 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
 .detalle-familia__scroll {
   flex: 1;
   min-height: 0;
+  margin-top: 4px;
 }
 
 .detalle-estilo {
-  padding: 8px;
-  border-radius: 6px;
+  padding: 5px 6px;
+  border-radius: 5px;
   border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.18));
 }
 
@@ -1265,10 +1442,10 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  min-height: 84px;
-  padding: 10px 8px;
-  border-radius: 8px;
+  gap: 1px;
+  min-height: 52px;
+  padding: 4px 6px;
+  border-radius: 6px;
   border: 1px solid var(--n-border-color, rgba(127, 127, 127, 0.22));
   background: var(--n-color-embedded, rgba(127, 127, 127, 0.05));
   text-align: center;
@@ -1279,12 +1456,12 @@ function tonoCarga(pedido: number): 'success' | 'warning' | 'error' | 'info' {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
-  font-size: 12px;
+  gap: 3px;
+  font-size: 11px;
 }
 
 .metrica__valor {
-  font-size: 22px;
+  font-size: 16px;
   line-height: 1.1;
 }
 </style>
